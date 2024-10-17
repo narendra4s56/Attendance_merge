@@ -126,7 +126,17 @@ if df_list:
     # Add text to the inserted rows
     ws['A2'] = "DEPARTMENT OF COMPUTER ENGINEERING"  
     ws['A3'] = "SESSION : JULY-DEC 2024; Semester 'A'"  
-    ws['A4'] = " BTech. IYEAR ATTENDANCE SHEET"  
+    # ws['A4'] = " BTech. IYEAR ATTENDANCE SHEET" 
+    if first_digit == 1:
+         ws['A4'] = " BTech. FIRST YEAR ATTENDANCE SHEET"
+    elif first_digit == 2:
+        ws['A4'] = " BTech. SECOND YEAR ATTENDANCE SHEET"
+    elif first_digit == 3:
+        ws['A4'] = " BTech. THIRD YEAR ATTENDANCE SHEET"
+    elif first_digit == 4:
+        ws['A4'] = " BTech. FINAL YEAR ATTENDANCE SHEET"
+    else:
+        ws['A4'] = " "   
 
     # Merge cells across the columns for each heading row (adjust based on your column count)
     max_column = ws.max_column
